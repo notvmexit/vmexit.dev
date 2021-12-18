@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    background-color: #06070a;
+    font-family: 'Inter';
+    color: white;
+    overflow-x: hidden;
+}
+
+.content {
+    margin: auto;
+    margin-top: 5%;
+    padding: 10px;
+    max-width: 1000px;
+    min-width: 355px;
+    word-wrap: break-word;
+}
+
+.page {
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: left;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: #1163e6
+}
+
+.btn {
+    border: 0;
+    color: white;
+    padding: 16px;
+    background-color: #1163e6;
+    border-radius: 8px;
+}
+
+.seperator {
+    border-bottom: 1px solid #51555d;
+    width: 365px;
+}

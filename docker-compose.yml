@@ -1,0 +1,42 @@
+version: '3.3'
+services:
+  database:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: IL0v34NdH4t3F3d5
+      MYSQL_ROOT_PASSWORD: IL0v34NdH4t3F3d5
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+  
+  gin:
+    build:
+      context: gin/
+    ports:
+      - "4000:4000"
+    depends_on:
+      - database
+    
+    
+  vodka:
+    build:
+      context: vodka/
+    ports:
+      - "80:80"
+    depends_on:
+      - gin
